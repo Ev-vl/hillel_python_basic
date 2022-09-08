@@ -1,9 +1,10 @@
 import math
 import time
-import test_name
+from tkinter import PIESLICE
+import test_name_08_09_2022
 
 print('------------------- import test file')
-r1 = test_name.WEATHER
+r1 = test_name_08_09_2022.WEATHER
 
 print(f'Name from lesson 2: {r1}')
 
@@ -91,9 +92,34 @@ if __name__ == '__main__':
     print(s)
 
     #можно эксперементировать
+    s = '5.0'
+    print('Is digit? ', s.isdigit())
+    print('Is nubmer? ', s.isnumeric)
+    print('Is flot', s.isdecimal)
+
+    
+    print('Python_3_'.strip('_'))
+    s = input('Введите число х= ')
+    
+    #-------
+    # Не входит в план занятий
+    try:
+        int(s)
+    except Exception:
+        print('Это не число')    
+    print(s.lstrip('-').isdigit())
+    #-------
+
+    print('------------------- str modification')
+
+    s = 'Hello there, my friend!'
+    s = s.replace('Hello', 'Hi')
+    print(s)
+    print(s.find('Hello'), s.rfind('my'))
 
     #float - дробное число
     
     #print(type(y))
     #print(round(y))
+    
     
