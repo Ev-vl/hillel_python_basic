@@ -1,7 +1,11 @@
 import math
-from re import RegexFlag
 import time
+import test_name
 
+print('------------------- import test file')
+r1 = test_name.WEATHER
+
+print(f'Name from lesson 2: {r1}')
 
 if __name__ == '__main__':
     # int - целое число
@@ -49,14 +53,45 @@ if __name__ == '__main__':
 
     print('------------------- time')
     
-    time.sleep(1)
+    #time.sleep(1)
     print(f'Наша программа выполняется за: {round(time.time() - t0, 4)} с')
 
     print('------------------- str')
     
     #'Hello there!'.encode('utf-8')
-    print()
+    x1 = x3 = 9
+    x3 = 11
     
+    print(f'Repr, {repr(x1)}, {repr(x3)}')
+    print(f'Repr, {repr(x2)}')
+
+    print('------------------- repr')
+
+    #НАПОМНИТЬ РАЗОБРАТЬ ПОТОМ
+
+    print('------------------- str')
+
+    s = 'Hello there, my friend!'
+    print(s.lower())
+    print(s.upper())
+    #s = 'python'
+    print(s.title())
+    
+    print(s.upper(), s.upper().title())
+
+    print(s.capitalize())
+
+    s="""
+        Hello
+        there
+        how
+        are 
+        you?
+        """
+    print(s)
+
+    #можно эксперементировать
+
     #float - дробное число
     
     #print(type(y))
