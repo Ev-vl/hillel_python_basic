@@ -1,4 +1,4 @@
-#Delete last number
+#-----Delete last number-----
 
 
 num = input("Enter number: ")

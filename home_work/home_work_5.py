@@ -1,4 +1,4 @@
-#Print last number
+#-----Print last number-----
 
 
 num = input("Enter number: ")
