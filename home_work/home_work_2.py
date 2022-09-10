@@ -1,11 +1,13 @@
-#Converte UAH to USD or USD to UAH by NBU exchange rate
+#-----Converte UAH to USD or USD to UAH by NBU exchange rate-----
 
-choose = input('Choose currency (USD or UAH): ')
-while choose != 'USD' and choose !='UAH':
+#choice currency
+choice = input('Choose currency (USD or UAH): ')
+while choice != 'USD' and choice !='UAH':
     print('Wrong value! Try again.')
-    choose = input('Choose currency (USD or UAH): ')
+    choice = input('Choose currency (USD or UAH): ')
 else:
-    if choose =='UAH':
+    #in depending on choice used different convertation
+    if choice =='UAH':
         money = input("Enter UAH: ")
         while type(money) != int or type(money) != float:
                 
@@ -19,7 +21,7 @@ else:
         dollar = money / 40.5
         print(f'{money} UAH = {dollar} USD')
 
-    elif choose =='USD' :
+    elif choice =='USD' :
         money = input("Enter USD: ")
         while type(money) != int or type(money) != float:
                 

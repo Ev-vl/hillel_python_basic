@@ -1,7 +1,9 @@
-#Delete symbols '.,;:!?'
+#-----Delete symbols '.,;:!?'-----
 
 str1 = input('Input string: ')
 
+
+#remove symbols to empty
 str1 = str1.replace('.', '')
 str1 = str1.replace(',', '')
 str1 = str1.replace(';', '')
