@@ -52,5 +52,43 @@ else:
 
 
 
-#процесс написание калькулятора ---- Всё пройдено
+#процесс написание калькулятора
 
+def return_params():
+    a = input('Enter firts number: ')
+    b = input('Enter second number: ')
+    a = int(a)
+    b = int(b)
+    return a,b
+
+
+exit = False
+
+while not exit:
+    
+    print("""
+This is calculator
+
+1. +
+2. -
+3. *
+4. /
+5. Exit
+    """)
+    
+    a,b = return_params()
+    choise = input('Choise math operation: ')
+
+    if choise == '1' or '+':
+        print(f'{a} + {b} = {a+b}')
+    elif choise == '2' or '-':
+        print(f'{a} - {b} = {a-b}')
+    elif choise == '3' or '*':
+        print(f'{a} * {b} = {a*b}')
+    elif choise == '4' or '/':
+        print(f'{a} / {b} = {a/b}')
+    elif choise == '5' or 'exit' or 'Exit':
+        print('Done.')
+        break
+    else:
+        print('Wrond value')
