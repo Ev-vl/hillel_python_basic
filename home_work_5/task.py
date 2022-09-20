@@ -17,7 +17,6 @@ def foursquare_check(a,b,c,d):
 
 def rectangle_check(a,b,c,d):
 
-    #if (a**2 == b**2 + c**2) or (b**2 == a**2 + c**2) or (c**2 == a**2 + b**2):
     if (a**2 + b**2 == c**2 + d**2) or (a**2 + c**2 == b**2 + d**2) or (a**2 + d**2 == c**2 + b**2):
         return True
 
