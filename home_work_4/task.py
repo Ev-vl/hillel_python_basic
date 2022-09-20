@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     money = return_float(user_choise)
 
-    if user_choise =='UAH':
+    if user_choise.upper() =='UAH':
         print(f'{money} UAH = {round(money / dollar, 3)} USD')
     else:
         print(f'{money} USD = {round(money * hryvnia, 3)} UAH')
