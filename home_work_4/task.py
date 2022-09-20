@@ -1,4 +1,4 @@
-#----- Converte UAH to USD or USD to UAH by NBU exchange rate; version 2.0 -----#
+#----------- Converte UAH to USD or USD to UAH by NBU exchange rate; version 2.0 -----------#
 
 
 #function for check and return currency
@@ -19,8 +19,8 @@ def return_float(currency):
                 num = float(num)
                 return num
             except Exception: 
-                num = input(f'It is not a number! Enter {currency.upper()}: ')              
-
+                num = input(f'It is not a number! Enter {currency.upper()}: ')
+                
 #main part
 if __name__ == '__main__':
     #choice currency

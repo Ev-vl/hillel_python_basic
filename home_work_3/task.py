@@ -1,4 +1,4 @@
-#Bot from Ukraine :)
+#----------- Bot from Ukraine :) -----------#
 
 user_input = input('Let\'s start to talk with bot. Input text: ')
 

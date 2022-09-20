@@ -1,10 +1,6 @@
 #----------- Quadrilateral check -----------#
 
 
-from operator import truediv
-from tkinter import PIESLICE
-
-
 def input_value(name):
     num = input(f'Enter {name}: ')
     while True:
@@ -13,14 +9,17 @@ def input_value(name):
             if num > 0:
                 return num
         except Exception: 
-            input(f'It is not a wrong value! Enter {name}: ')
+            num = input(f'It is not a wrong value! Enter {name}: ')
 
 def foursquare_check(a,b,c,d):
     if a == b == c == d:
         return True
 
 def rectangle_check(a,b,c,d):
-    #continue
+
+    #if (a**2 == b**2 + c**2) or (b**2 == a**2 + c**2) or (c**2 == a**2 + b**2):
+    if (a**2 + b**2 == c**2 + d**2) or (a**2 + c**2 == b**2 + d**2) or (a**2 + d**2 == c**2 + b**2):
+        return True
 
 if __name__ == '__main__':
     
@@ -33,3 +32,7 @@ if __name__ == '__main__':
 
     if foursquare_check(a,b,c,d):
         print('It is foursquare!')
+    elif rectangle_check(a,b,c,d):
+        print('it is rectangle!')
+    else:
+        print('It is an object with four sides!')

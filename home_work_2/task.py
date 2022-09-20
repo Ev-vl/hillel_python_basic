@@ -1,15 +1,21 @@
+#----------- Check number range -----------#
+
+
+#input and float/int check; after checking num will return
+def return_float():
+    num = input(f'Enter number: ')
+    while type(num) != int or type(num) != float:
+            
+            try:
+                num = float(num)
+                return num
+            except Exception: 
+                num = input(f'It is not a number! Enter number: ')
 
 
 
 #checking is it number
-number = input("Enter number: ")
-while type(number) != int or type(number) != float:
-        
-        try:
-            number = int(number)
-            break
-        except Exception: 
-            number = input('It is not a number! Enter number: ')
+number = return_float()
 
 
 if number <= -500:
