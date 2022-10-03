@@ -49,7 +49,7 @@ def print_sorted_dict(dict_data: dict, reversed_mode: bool, key: int):
 
     print('Your sorted notes by date:')
 
-    sorted_dict = sorted(dict_data.items(), reverse=reversed_mode, key=lambda x:x[key])
+    sorted_dict = sorted(dict_data.items(), reverse = reversed_mode, key = lambda x:x[key])
 
     for item, value in sorted_dict:
         print(f'Data: {item[0]} {item[1]}:{item[2]}:{item[3]}. Note: {value}')
