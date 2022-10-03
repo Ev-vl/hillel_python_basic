@@ -21,9 +21,9 @@ def add_date():
     """
 
     date_now = datetime.now()
-    data_str = date_now.date(), date_now.hour, date_now.minute, date_now.second
+    data_param = date_now.date(), date_now.hour, date_now.minute, date_now.second
     
-    return data_str
+    return data_param
 
 def user_command_check(u_s_i: str):
     
