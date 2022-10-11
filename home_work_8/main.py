@@ -2,23 +2,26 @@
 
 # Логика программы:
 #   Пользователю доступно на выбор 7 команд.
-#   Пользователь вводит команду. Переменная user_command_input типа str автоматически переводится в нижний регистр для стабильности.
+#   Перед вводом команды идёт проверка на наличие заметок в локальном файле JSON и в случае наличия = предлагает
+#   пользователю загрузить их.
+#   Пользователь вводит команду. Переменная user_command_input типа str автоматически переводится в нижний регистр для
+#   стабильности.
 #   Если введена некоректная команда - цикл начинается заново.
 #   Первыми идут команды без обработки - help и exit.
+#   В случае ввода команды add в локальный словарь user_note_data записывается соответствие дата - заметка.
+#   Команды clear и load выполняются только после проверки непустых записей в файле JSON. Первая команда удаляет его
+#   и очищает локальный словарь, вторая - записывает в локальный словарь user_note_data все записи из файла JSON.
 #   Далее идёт проверка пустого количества заметок. Если пусто - выводится ошибка пользователю и цикл начинается заново.
+#   Команда save сохраняет записи из user_note_data в файл JSON.
 #   Последние четыре команды выводят отсортированный список заметок, введённых пользователем.
-#   Примечание: я использовал тип datetime для корректной сортировки по дате
+#   Примечание 1: я перешёл с Visual Studio на PyCharm и мне сразу выбилось много ошибок PEP, исправил это
 #   Примечание 2: я починил ошибку сортировки
-
-
-#На чём остановился - добавить проверку на пустую базу данных для записи (дополнительно можно добавить проверку
-# на пустую переменную user_note_data для выведения разных комментариев), добавить функцию для удаления заметок и
-# комментарии
+#   Примечание 3: Если это самый первый запуск программы - файла JSON нет, так как нет заметок. При сохранении -
+#   он создастся автоматически.
 
 
 import json
 import os
-import time
 from datetime import datetime
 
 
@@ -26,11 +29,12 @@ def add_date():
     """
         Функция возврата текущей даты в виде строки.
 
-        return : значение типа datetime
+        return : значение типа datetime формата (%Y, %m, %d, %H, %M, %S)
     """
 
-    date_now = datetime.now()
-    data_param = date_now.date(), date_now.hour, date_now.minute, date_now.second
+    datetime_now = datetime.now()
+    data_param = datetime_now.year, datetime_now.month, datetime_now.day, datetime_now.hour, datetime_now.minute, \
+                 datetime_now.second
 
     return data_param
 
@@ -63,12 +67,12 @@ def user_command_check(u_s_i: str):
     return False
 
 
-def print_sorted_dict(dict_data: dict, reversed_mode: bool, key: int, note_mode: bool):
+def print_sorted_dict(dict_data: dict, reversed_mode: bool, note_mode: bool):
     """
         Функция вывода сортированного словаря. Параметры:
         --- dict_data : словарь, который нужно отсортировать.
         --- reversed_mode : булевое значение для переключения режима reverse в функции sorted().
-        --- key : вводит значения 0 или 1 для сортировки по ключу или значению словаря, соответственно.
+        --- note_mode : булевое значение, True - режим сортировки по длине заметки, False - по дате.
         
         return : Null
     """
@@ -78,13 +82,22 @@ def print_sorted_dict(dict_data: dict, reversed_mode: bool, key: int, note_mode:
     if note_mode:
         sorted_dict = sorted(dict_data.items(), reverse=reversed_mode, key=lambda x: len(x[1]))
     else:
-        sorted_dict = sorted(dict_data.items(), reverse=reversed_mode, key=lambda x: x[key])
+        sorted_dict = sorted(dict_data.items(), reverse=reversed_mode, key=lambda x: x[0])
 
     for item, value in sorted_dict:
-        print(f'Data: {item[0]} {item[1]}:{item[2]}:{item[3]}. Note: {value}')
+        print(f'Data: {item.year}.{item.month}.{item.day} 'f'{item.hour}:{item.minute}:{item.second}. '
+              f'Note: {value}')
 
 
 def save_notes_to_db(dict_data: dict, file_name: str):
+    """
+        Функция сохранения заметок в файл JSON из локального словаря. Параметры:
+        --- dict_data : словарь, с которого идёт сохранение.
+        --- file_name : строка с именем файла JSON
+
+        return : Null
+    """
+
     history = []
 
     for item, value in dict_data.items():
@@ -94,15 +107,39 @@ def save_notes_to_db(dict_data: dict, file_name: str):
         })
 
     json.dump({"history:": history}, open(file_name, mode='w'), indent=4)
+    print('Saved.')
 
 
-def load_notes_to_db(file_name):
+def check_notes_from_db(file_name: str):
+    """
+        Функция проверки заметок в файле JSON. Параметры:
+        --- file_name : строка с именем файла JSON.
+        
+        return : если файл не пустой - True, если пустой - False.
+    """
+
+    try:
+        with open(file_name) as fn:
+            load_data = json.load(fn)
+        return True
+    except Exception:
+        return False
+
+
+def load_notes_from_db(file_name: str):
+    """
+        Функция загрузки заметок из файла JSON. Параметры:
+        --- file_name : строка с именем файла JSON.
+        
+        return : словарь с загруженными заметками из файла JSON.
+    """
+
     with open(file_name) as fn:
         load_data = json.load(fn)
         new_dict_data = {}
         print('Your saved notes:')
         for item in load_data["history:"]:
-            date_from_item = datetime.strptime(item['date'], '(datetime.date(%Y, %m, %d), %H, %M, %S)')
+            date_from_item = datetime.strptime(item['date'], '(%Y, %m, %d, %H, %M, %S)')
             note_from_item = item['note']
             print(f'Data: {date_from_item.year}.{date_from_item.month}.{date_from_item.day} '
                   f'{date_from_item.hour}:{date_from_item.minute}:{date_from_item.second}. '
@@ -110,6 +147,20 @@ def load_notes_to_db(file_name):
             new_dict_data[date_from_item] = note_from_item
         print('Loaded.')
         return new_dict_data
+
+
+def clear_notes(file_name: str):
+    """
+        Функция удаления файла JSON. Параметры:
+        --- file_name : строка с именем файла JSON.
+
+        return : пустой словарь.
+    """
+
+    path = os.path.join(os.path.abspath(os.path.dirname(__file__)), file_name)
+    os.remove(path)
+    print('Cleared.')
+    return {}
 
 
 if __name__ == '__main__':
@@ -132,10 +183,16 @@ if __name__ == '__main__':
 
     while True:
 
+        # Перед вводом команды выполняется проверка на наличие заметок в JSON файле и пустом словаре и предлагает
+        # пользователю загрузить их.
+        if check_notes_from_db(file_name) and len(user_note_data) == 0:
+            if input('You have unloaded notes. Do you want to load it? y/n\n>>> ').lower() == 'y':
+                user_note_data = load_notes_from_db(file_name)
+
         user_command_input = input('Enter command: ').lower()
 
         # Проверка введённой команды пользователя.
-        if user_command_check(user_command_input) == False:
+        if not user_command_check(user_command_input):
             print('Wrong command! Try again.')
             continue
 
@@ -160,28 +217,42 @@ if __name__ == '__main__':
         # Блок if для вывода команды add.
         elif user_command_input == 'add':
             date_now = add_date()
-            user_str = input(f'Date {date_now[0]} {date_now[1]}:{date_now[2]}:{date_now[3]}. Write note:\n>>>')
+            user_str = input(f'Date {date_now[0]}.{date_now[1]}.{date_now[2]} {date_now[3]}:{date_now[4]}:'
+                             f'{date_now[5]}. Write note:\n>>>')
             user_note_data[date_now] = user_str
 
+        # Блок if для команды load. Проверяется наличие заметок в JSON файле и только после этого идёт загрузка
         elif user_command_input == 'load':
-            user_note_data = load_notes_to_db(file_name)
+            if check_notes_from_db(file_name):
+                user_note_data = load_notes_from_db(file_name)
+            else:
+                print('No any local notes!')
+
+        # Блок if для команды clear. Проверяется наличие заметок в JSON файле и только после этого идёт удаление
+        elif user_command_input == 'clear':
+            if check_notes_from_db(file_name):
+                user_note_data = clear_notes(file_name)
+            else:
+                print('No any local notes!')
 
         # Блок if для проверки нулевого количества заметок, если есть заметки - выполняется одна из команд сортировки.
         elif len(user_note_data) == 0:
             print('No any notes!')
             continue
 
+        # Блок if для команды save.
         elif user_command_input == 'save':
             save_notes_to_db(user_note_data, file_name)
 
+        # Блок if для команд сортировки.
         elif user_command_input == 'earliest':
-            print_sorted_dict(user_note_data, False, 0, False)
+            print_sorted_dict(user_note_data, False, False)
 
         elif user_command_input == 'latest':
-            print_sorted_dict(user_note_data, True, 0, False)
+            print_sorted_dict(user_note_data, True, False)
 
         elif user_command_input == 'longest':
-            print_sorted_dict(user_note_data, True, 1, True)
+            print_sorted_dict(user_note_data, True, True)
 
         elif user_command_input == 'shortest':
-            print_sorted_dict(user_note_data, False, 1, True)
+            print_sorted_dict(user_note_data, False, True)
