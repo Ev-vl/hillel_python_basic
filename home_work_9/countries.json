@@ -1,92 +1,92 @@
 {
-    "country": [
-        {
-            "name": "Ukraine",
-            "capital": "Kyiv",
-            "population": 44130000,
-            "part_of_the_world": "Europe",
-            "language": "ukrainian",
-            "UID": "b2a5fd0b-6930-4ed1-b7d7-213300cb8f18"
-        },
-        {
-            "name": "Germany",
-            "capital": "Berlin",
-            "population": 88240000,
-            "part_of_the_world": "Europe",
-            "language": "deutsch",
-            "UID": "dbc2fd38-d08f-4538-b0ce-7c6e026eeced"
-        },
-        {
-            "name": "Italy",
-            "capital": "Rome",
-            "population": 59550000,
-            "part_of_the_world": "Europe",
-            "language": "italian",
-            "UID": "49f7f07d-5383-486e-8d9a-b1ee96be1e62"
-        },
-        {
-            "name": "France",
-            "capital": "Paris",
-            "population": 67390000,
-            "part_of_the_world": "Europe",
-            "language": "french",
-            "UID": "8b07840b-535c-4e32-b574-c79db5d031cb"
-        },
-        {
-            "name": "Poland",
-            "capital": "Warsaw",
-            "population": 37950000,
-            "part_of_the_world": "Europe",
-            "language": "polish",
-            "UID": "416cff3a-e656-4a8f-bbed-209d9dcdf926"
-        },
-        {
-            "name": "USA",
-            "capital": "Washington",
-            "population": 329500000,
-            "part_of_the_world": "North America",
-            "language": "english",
-            "UID": "1c7af504-1787-4903-8cea-77691dc54ca3"
-        },
-        {
-            "name": "Canada",
-            "capital": "Ottawa",
-            "population": 38010000,
-            "part_of_the_world": "North America",
-            "language": "english",
-            "UID": "418d9325-bbec-418d-be28-736756ed4013"
-        },
-        {
-            "name": "Japan",
-            "capital": "Tokyo",
-            "population": 125800000,
-            "part_of_the_world": "Asia",
-            "language": "japanese",
-            "UID": "8641ad6b-a744-48c5-b470-cfb24958c935"
-        },
-        {
-            "name": "India",
-            "capital": "New Delhi",
-            "population": 1380000000,
-            "part_of_the_world": "Asia",
-            "language": "hindi",
-            "UID": "b7d3e36d-b17a-4bc5-bbf5-bf50a8313d67"
-        },
-        {
-            "name": "Brazil",
-            "capital": "Brasilia",
-            "population": 212600000,
-            "part_of_the_world": "South America",
-            "language": "portuguese",
-            "UID": "cb3f5e71-4e91-4306-9082-8fc4c12fa658"
-        },
-        {
-            "name": "Colombia",
-            "capital": "Bogota",
-            "population": 50880000,
-            "part_of_the_world": "South America",
-            "language": "spanish",
-            "UID": "10da020a-33be-449f-a6c8-9117f4d9cf16"
-        }
-    ]
+  "country": [
+    {
+      "name": "Ukraine",
+      "capital": "Kyiv",
+      "population": 44130000,
+      "part_of_the_world": "Europe",
+      "language": "ukrainian",
+      "UID": ""
+    },
+    {
+      "name": "Germany",
+      "capital": "Berlin",
+      "population": 88240000,
+      "part_of_the_world": "Europe",
+      "language": "deutsch",
+      "UID": ""
+    },
+    {
+      "name": "Italy",
+      "capital": "Rome",
+      "population": 59550000,
+      "part_of_the_world": "Europe",
+      "language": "italian",
+      "UID": ""
+    },
+    {
+      "name": "France",
+      "capital": "Paris",
+      "population": 67390000,
+      "part_of_the_world": "Europe",
+      "language": "french",
+      "UID": ""
+    },
+    {
+      "name": "Poland",
+      "capital": "Warsaw",
+      "population": 37950000,
+      "part_of_the_world": "Europe",
+      "language": "polish",
+      "UID": ""
+    },
+    {
+      "name": "USA",
+      "capital": "Washington",
+      "population": 329500000,
+      "part_of_the_world": "North America",
+      "language": "english",
+      "UID": ""
+    },
+    {
+      "name": "Canada",
+      "capital": "Ottawa",
+      "population": 38010000,
+      "part_of_the_world": "North America",
+      "language": "english",
+      "UID": ""
+    },
+    {
+      "name": "Japan",
+      "capital": "Tokyo",
+      "population": 125800000,
+      "part_of_the_world": "Asia",
+      "language": "japanese",
+      "UID": ""
+    },
+    {
+      "name": "India",
+      "capital": "New Delhi",
+      "population": 1380000000,
+      "part_of_the_world": "Asia",
+      "language": "hindi",
+      "UID": ""
+    },
+    {
+      "name": "Brazil",
+      "capital": "Brasilia",
+      "population": 212600000,
+      "part_of_the_world": "South America",
+      "language": "portuguese",
+      "UID": ""
+    },
+    {
+      "name": "Colombia",
+      "capital": "Bogota",
+      "population": 50880000,
+      "part_of_the_world": "South America",
+      "language": "spanish",
+      "UID": ""
+    }
+  ]
 }
