@@ -1,0 +1,37 @@
+{
+    "hello": [
+        [
+            "Hello!",
+            "Hello, I'm bot!"
+        ],
+        false
+    ],
+    "good morning": [
+        [
+            "Good morning!",
+            "Good morning, I'm bot!"
+        ],
+        false
+    ],
+    "hi": [
+        [
+            "Hi!",
+            "Hi, I'm bot!"
+        ],
+        false
+    ],
+    "good night": [
+        [
+            "Good night!",
+            "Good night, I'm bot!"
+        ],
+        false
+    ],
+    "bye": [
+        [
+            "Bye!",
+            "See you!"
+        ],
+        true
+    ]
+}
