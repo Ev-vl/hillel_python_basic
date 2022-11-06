@@ -1,0 +1,178 @@
+[
+  {
+    "category": "Pan",
+    "name": "Tefal Intuition G6",
+    "price": 899,
+    "quantity": 15,
+    "additional_data": {"size": 24.0, "material": "metal", "coating": "titanium"}
+  },
+  {
+    "category": "Pan",
+    "name": "Tefal Simple Cook",
+    "price": 450,
+    "quantity": 5,
+    "additional_data": {"size": 24.0, "material": "aluminum", "coating": "titanium"}
+  },
+  {
+    "category": "Pan",
+    "name": "Rondell Zorro",
+    "price": 1599,
+    "quantity": 5,
+    "additional_data": {"size": 28.0, "material": "aluminum", "coating": "titanium"}
+  },
+  {
+    "category": "Pan",
+    "name": "Tefal Excellence",
+    "price": 2299,
+    "quantity": 1,
+    "additional_data": {"size": 26, "material": "aluminum", "coating": "titanium"}
+  },
+  {
+    "category": "Pan",
+    "name": "BergHOFF Gem",
+    "price": 2899,
+    "quantity": 4,
+    "additional_data": {"size": 28.0, "material": "metal", "coating": "titanium"}
+  },
+  {
+    "category": "Pot",
+    "name": "Vinzer Culinaire",
+    "price": 1499,
+    "quantity": 6,
+    "additional_data": {"size": 18.0, "capacity": 2.4, "material": "steel", "cover_included": "True"}
+  },
+  {
+    "category": "Pot",
+    "name": "Fissman Elara",
+    "price": 2799,
+    "quantity": 3,
+    "additional_data": {"size": 24.0, "capacity": 5.6, "material": "steel", "cover_included": "True"}
+  },
+  {
+    "category": "Pot",
+    "name": "Maestro Classic",
+    "price": 1400,
+    "quantity": 6,
+    "additional_data": {"size": 32.0, "capacity": 18.0, "material": "steel", "cover_included": "False"}
+  },
+  {
+    "category": "Pot",
+    "name": "Krauff Lokka",
+    "price": 699,
+    "quantity": 10,
+    "additional_data": {"size": 16.0, "capacity": 2.1, "material": "steel", "cover_included": "False"}
+  },
+  {
+    "category": "Pot",
+    "name": "Tefal Intuition",
+    "price": 1099,
+    "quantity": 4,
+    "additional_data": {"size": 20.0, "capacity": 3.6, "material": "steel", "cover_included": "True"}
+  },
+  {
+    "category": "Knife",
+    "name": "SAMURA 67",
+    "price": 1999,
+    "quantity": 3,
+    "additional_data": {"material": "damascus", "length": 15, "handle_material": "wood"}
+  },
+  {
+    "category": "Knife",
+    "name": "Grossman Melissa",
+    "price": 333,
+    "quantity": 10,
+    "additional_data": {"material": "ceramics", "length": 14.0, "handle_material": "wood"}
+  },
+  {
+    "category": "Knife",
+    "name": "Rondell Falkata",
+    "price": 899,
+    "quantity": 5,
+    "additional_data": {"material": "steel", "length": 20.0, "handle_material": "plastic"}
+  },
+  {
+    "category": "Knife",
+    "name": "RiNGEL Exzellent",
+    "price": 249,
+    "quantity": 7,
+    "additional_data": {"material": "steel", "length": 25.0, "handle_material": "plastic"}
+  },
+  {
+    "category": "Knife",
+    "name": "BergHOFF Essentials",
+    "price": 699,
+    "quantity": 2,
+    "additional_data": {"material": "steel", "length": 27.0, "handle_material": "steel"}
+  },
+  {
+    "category": "Plate",
+    "name": "VITTORA Aura",
+    "price": 94,
+    "quantity": 15,
+    "additional_data": {"size": 23.0, "material": "glass"}
+  },
+  {
+    "category": "Plate",
+    "name": "Ardesto Cremona",
+    "price": 100,
+    "quantity": 9,
+    "additional_data": {"size": 20.0, "material": "ceramics"}
+  },
+  {
+    "category": "Plate",
+    "name": "Ardesto Bagheria",
+    "price": 105,
+    "quantity": 4,
+    "additional_data": {"size": 20.0, "material": "ceramics"}
+  },
+  {
+    "category": "Plate",
+    "name": "Tahina",
+    "price": 108,
+    "quantity": 6,
+    "additional_data": {"size": 19.0, "material": "glass"}
+  },
+  {
+    "category": "Plate",
+    "name": "Sigikid Sammy Samo",
+    "price": 229,
+    "quantity": 8,
+    "additional_data": {"size": 15.0, "material": "plastic"}
+  },
+  {
+    "category": "Cup",
+    "name": "Helfer Baden",
+    "price": 40,
+    "quantity": 15,
+    "additional_data": {"capacity": 70.0, "material": "porcelain"}
+  },
+  {
+    "category": "Cup",
+    "name": "Ardesto Lucca",
+    "price": 79,
+    "quantity": 10,
+    "additional_data": {"capacity": 360, "material": "ceramics"}
+  },
+  {
+    "category": "Cup",
+    "name": "Delonghi Espresso",
+    "price": 419,
+    "quantity": 3,
+    "additional_data": {"capacity": 150, "material": "porcelain"}
+  },
+  {
+    "category": "Cup",
+    "name": "KELA Mattia",
+    "price": 500,
+    "quantity": 4,
+    "additional_data": {"capacity": 300, "material": "ceramics"}
+  },
+  {
+    "category": "Cup",
+    "name": "Keramia",
+    "price": 88,
+    "quantity": 7,
+    "additional_data": {
+      "capacity": 415, "material": "porcelain"}
+  }
+]
